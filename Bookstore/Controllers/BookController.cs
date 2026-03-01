@@ -44,5 +44,12 @@ namespace Bookstore.Controllers
             }) ?? new Book();
             return View(book);
         }
+
+        [HttpPost]
+        public RedirectToActionResult PagesSizes(BookGridData currentRoute)
+        {
+
+            return RedirectToAction("List", currentRoute.ToDictionary());
+        }
     }   
 }
